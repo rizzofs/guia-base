@@ -1,10 +1,9 @@
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
-#include "tipo_elemento.h"
+#include "tipo_elemento/tipo_elemento.h"
 #include "listas/listas.h"
 
-Lista crear_lista_desde_array(int *vector, int tamano) {
+Lista crear_lista_desde_array(const int *vector, const int tamano) {
     Lista l = l_crear();
 
     for (int i = 0; i < tamano; i++) {
@@ -14,7 +13,7 @@ Lista crear_lista_desde_array(int *vector, int tamano) {
     return l;
 }
 
-void destruir_lista(Lista l) {
+void destruir_lista(const Lista l) {
     Iterador iter = iterador(l);
     while (hay_siguiente(iter)) {
         TipoElemento te = siguiente(iter);
@@ -24,7 +23,7 @@ void destruir_lista(Lista l) {
     free(l);
 }
 
-char *lista_como_string(Lista lista, char *(*toStringTipoElemento)(TipoElemento te)) {
+char *lista_como_string(const Lista lista, char *(*toStringTipoElemento)(TipoElemento te)) {
     char *result = (char *) malloc(sizeof(char) * 3);
     strcpy(result, "[");
 

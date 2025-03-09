@@ -1,10 +1,10 @@
 #ifndef UTIL_LISTAS_H
 #define UTIL_LISTAS_H
 
-#include "listas/listas.h"
-#include "tipo_elemento.h"
+#include "listas.h"
+#include "tipo_elemento/tipo_elemento.h"
 
-Lista crear_lista_desde_array(int *vector, int tamano);
+Lista crear_lista_desde_array(const int *vector, int tamano);
 
 void destruir_lista(Lista l);
 
