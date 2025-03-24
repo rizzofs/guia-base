@@ -22,5 +22,11 @@ int main() {
             {"Davies",      20, 100}
     };
 
+    // tets de jugadoresOrdenadosPorCantDePartidos
+    struct Jugador *jugadoresOrdenados = jugadoresOrdenadosPorCantDePartidos(equipo);
+    assert(jugadoresOrdenados[0].partidosJugados == 900);
+    assert(jugadoresOrdenados[1].partidosJugados == 800);
+    assert(jugadoresOrdenados[2].partidosJugados == 800);
+    printf("Todos los tests pasaron\n");
     return 0;
 }
